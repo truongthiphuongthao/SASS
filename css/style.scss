@@ -24,20 +24,193 @@
 // }
 
 // mixin: don gian la ham
-@mixin border-rd($bien1, $bien2){
-    border-radius: $bien1 $bien2;
-    -moz-border-radius: $bien1 $bien2;
-    -webkit-border-radius: $bien1 $bien2;
-    -o-border-radius: $bien1 $bien2;
-}
-.main {
-    width: 500px;
-    height: 200px;
-    @include border-rd(10px, 0px)
-}
-.main2 {
-    width: 700px;
-    height: 300px;
-    @include border-rd(10px,5px)
+// @mixin border-rd($bien1, $bien2){
+//     border-radius: $bien1 $bien2;
+//     -moz-border-radius: $bien1 $bien2;
+//     -webkit-border-radius: $bien1 $bien2;
+//     -o-border-radius: $bien1 $bien2;
+// }
+// .main {
+//     width: 500px;
+//     height: 200px;
+//     @include border-rd(10px, 0px)
+// }
+// .main2 {
+//     width: 700px;
+//     height: 300px;
+//     @include border-rd(10px,5px)
+// }
+
+//extend : ke thua su dung lai
+// .border {
+//     border-radius: 10px 0px;
+//     -moz-border-radius: 10px 0px;
+//     -webkit-border-radius: 10px 0px;
+//     -o-border-radius: 10px 0px;
+// }
+// .background{
+//     border: 1px #f00;
+//     background-color: #fdd;
+// }
+// .main {
+//     width : 400px;
+//     height: 300px;
+//     @extend .background;
+// }
+// .main2{
+//     @extend .border;
+// }
+
+// placeholder selector
+
+// %border {
+//     border-radius: 10px 0px;
+//     -moz-border-radius: 10px 0px;
+//     -webkit-border-radius: 10px 0px;
+//     -o-border-radius: 10px 0px;
+// }
+// .background{
+//     border: 1px #f00;
+//     background-color: #fdd;
+// }
+// .main {
+//     width : 400px;
+//     height: 300px;
+//     @extend .background;
+// }
+// .main2{
+//     @extend %border;
+// }
+
+// operations: toan tu
+// .operations {
+//     width: (500px + 100px);
+//     width: (500px - 200px);
+//     height: (1000px / 5);
+//     height: (200px * 2);
+//     // round lam tron 2.5 thanh 3 => 3/3 = 1
+//     margin-right: round(2.5)/3;
+//     width: 500px - 200px/100px;
+//     color: #010203 * 2;
+//     background: #010203 + #040506;
+// }
+// // Interpolation
+// $name: main;
+// $border: border;
+// .container .#{$name}
+// {
+//     color: red;
+//     #{$border}-color: #ccc;
+// }
+// // if
+// $dieukien: maudo;
+// .main{
+//     @if($dieukien==maudo){
+//         background: red;
+//     }
+//     @else if($dieukien == mauxanh){
+//         background: blue;
+//     }
+//     @else{
+//         background: #ccc;
+//     }
+// }
+
+/// for
+// .item-1 {
+//     width: 1em;
+// }
+// .item-2 {
+//     width: 2em;
+// }
+// .item-3 {
+//     width: 3em;
+// }
+// .item-4 {
+//     width: 4em;
+// }
+// $length: 4;
+// @for $i from 1 through $length {
+//     .item-#{$i}{
+//         width: #{$i}em;
+//     }
+// }
+
+// each
+// .item1 {
+//     background: url("../image/item1.png");
+//     color: red;
+// }
+// .item2 {
+//     background: url("../image/item2.png");
+//     color: blue;
+// }
+// .item3 {
+//     background: url("../image/item3.png");
+//     color: black;
+// }
+// @each $var, $color in (item1, red), (item2, blue), (item3, black){
+//     .#{$var}{
+//         background: url("../image/#{$var}.png");
+//         color: $color
+//     }
+// }
+//while
+// .item1 {
+//     width: 12px;
+//     height: 6px;
+// }
+// .item2 {
+//     width: 24px;
+//     height: 12px;
+// }
+// .item3 {
+//     width: 36px;
+//     height: 24px;
+// }
+// .item4 {
+//     width: 48px;
+//     height: 36px;
+
+// .item5 {
+//     width: 60px;
+//     height: 48px;
+// }
+
+// $n:1;
+// @while($n<6){
+//     .item#{$n}{
+//         width:12px * $n;
+//         height:6px * $n;
+//     }
+//     $n: $n + 1;
+// }
+
+// menu
+.menu { width: 1200px; margin: 0 auto; background: blue;
+    ul{
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+        li{
+            float: left;
+            padding: 5px 80px;
+            a{
+                color: #fff;
+                font-size: 16px;
+                text-transform: uppercase;
+                line-height: 30px;
+                text-decoration: none;
+                &:hover{
+                    color: red;
+                }
+            }
+        }
+    }
 }
 
+.clearfix:after{
+    content: '';
+    clear: both;
+    display: block;
+}
