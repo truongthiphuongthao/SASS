@@ -1,3 +1,43 @@
-.main{
-    color: red;
+// $color: blue;
+// $color2: red;
+// $color3: green;
+// main{
+//     color: $color;
+//     .main-content {
+//         background-color: $color2;
+//         color: $color3;
+//         a{
+//             font-weight: bold;
+//             &:hover{
+//                 color: $color2;
+//             }
+//         }
+//     }
+//     .main-info {
+//         font: {
+//             family: Arial;
+//             size: 30px;
+//             weight: bold;
+//         }
+//         color: $color;
+//     }
+// }
+
+// mixin: don gian la ham
+@mixin border-rd($bien1, $bien2){
+    border-radius: $bien1 $bien2;
+    -moz-border-radius: $bien1 $bien2;
+    -webkit-border-radius: $bien1 $bien2;
+    -o-border-radius: $bien1 $bien2;
 }
+.main {
+    width: 500px;
+    height: 200px;
+    @include border-rd(10px, 0px)
+}
+.main2 {
+    width: 700px;
+    height: 300px;
+    @include border-rd(10px,5px)
+}
+
